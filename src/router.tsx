@@ -1,15 +1,23 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './dashboard';
+import Performance from './performance';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Dashboard />,
+  },
+  {
+    path: '/performance',
+    element: <Performance />,
+  },
+  {
+    path: '/error',
+    element: <div>error</div>,
+  },
+  {
+    path: '/resource',
+    element: <div>resource</div>,
   },
 ]);
 

@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
   BankOutlined,
   ColumnHeightOutlined,
   BarChartOutlined,
   BoxPlotOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Layout, Menu, theme } from 'antd';
+import Router, { router } from './router';
 import styles from './layout.module.less';
-
-const { Header, Content, Sider } = Layout;
+const { Header, Sider } = Layout;
 
 const items: MenuProps['items'] = [
-  { label: 'Dashboard', key: '1', icon: <BankOutlined /> },
-  { label: '性能分析', key: '4', icon: <ColumnHeightOutlined /> },
-  { label: '资源分析', key: '2', icon: <BarChartOutlined /> },
-  { label: '异常分析', key: '3', icon: <BoxPlotOutlined /> },
+  { label: 'Dashboard', key: '/', icon: <BankOutlined /> },
+  { label: '性能分析', key: '/performance', icon: <ColumnHeightOutlined /> },
+  { label: '资源分析', key: '/resource', icon: <BarChartOutlined /> },
+  { label: '异常分析', key: '/error', icon: <BoxPlotOutlined /> },
 ];
 
 const App: React.FC = () => {
@@ -26,31 +23,36 @@ const App: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
 
+  const pathname = router.state.location.pathname;
+
+  const [selectKeys, setSelectKeys] = useState(pathname);
+
+  useEffect(() => {
+    setSelectKeys(pathname);
+  }, [pathname]);
+
   return (
     <Layout style={{ height: '100%' }}>
       <Header className="header">
         <div className={styles.logo}>监控平台</div>
       </Header>
       <Layout>
-        <Sider width={200} style={{ background: colorBgContainer }}>
+        <Sider width={240} style={{ background: colorBgContainer }}>
           <Menu
+            className={styles.customMenu}
             mode="inline"
-            defaultSelectedKeys={['1']}
-            style={{ height: '100%', borderRight: 0 }}
+            defaultSelectedKeys={['/']}
             items={items}
+            selectedKeys={[selectKeys]}
+            onClick={(e) => {
+              const { key } = e;
+              router.navigate(key);
+              setSelectKeys(key);
+            }}
           />
         </Sider>
         <Layout style={{ padding: '24px 24px 24px' }}>
-          <Content
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              background: colorBgContainer,
-            }}
-          >
-            Content
-          </Content>
+          <Router />
         </Layout>
       </Layout>
     </Layout>
