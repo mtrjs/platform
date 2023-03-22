@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 import { useRequest } from 'ahooks';
 import styles from './index.module.less';
-import { getPerfOverview } from './service';
+import { getPerfOverview } from '@services/perf';
 import Waterfall from './components/waterfall';
 import Perf from './components/perf';
 

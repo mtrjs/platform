@@ -4,7 +4,7 @@ import Exporting from 'highcharts/modules/exporting';
 import xrange from 'highcharts/modules/xrange';
 import accessibility from 'highcharts/modules/accessibility';
 import { Card } from 'antd';
-import { PerfOverviewWaterfall } from '../../service';
+import { PerfOverviewWaterfall } from '@services/perf';
 
 xrange(Highcharts);
 Exporting(Highcharts);
@@ -48,6 +48,13 @@ function Component(props: Props) {
       [domInteractive, domComplete],
       [loadEventStart, loadEventEnd],
     ].map(([x, x2], y) => {
+      if (y !== 0) {
+        return {
+          x: x + unloadEventEnd,
+          x2: x2 + unloadEventEnd,
+          y,
+        };
+      }
       return {
         x,
         x2,

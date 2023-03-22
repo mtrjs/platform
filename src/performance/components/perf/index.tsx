@@ -1,6 +1,6 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { Card, Col, Row, Spin, Tooltip } from 'antd';
-import { PerfOverviewIndex } from '../../service';
+import { PerfOverviewIndex } from '@services/perf';
 import styles from './index.module.less';
 
 interface Props {

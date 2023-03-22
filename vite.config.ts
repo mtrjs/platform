@@ -10,11 +10,15 @@ export default defineConfig({
       less: {},
     },
   },
+  server: {
+    host: true,
+  },
   plugins: [
     react(),
     alias({
       entries: {
         '@utils': './src/utils',
+        '@services': './src/services',
       },
     }),
   ],
