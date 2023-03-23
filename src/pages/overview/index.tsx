@@ -1,7 +1,5 @@
 import { getStat } from '@services/overview';
 import { useRequest } from 'ahooks';
-import { Card, Col, Row } from 'antd';
-import { useEffect } from 'react';
 import Map from './components/map';
 import UA from './components/ua';
 import Visit from './components/visit';

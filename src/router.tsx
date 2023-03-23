@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Dashboard from './dashboard';
-import Performance from './performance';
-import Err from './error';
-import ErrorList from './errorList';
-import Overview from './overview';
+import Dashboard from './pages/dashboard';
+import Performance from './pages/performance';
+import Err from './pages/error';
+import ErrorList from './pages/errorList';
+import Overview from './pages/overview';
 
 export const router = createBrowserRouter([
   {
