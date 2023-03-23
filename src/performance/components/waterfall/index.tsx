@@ -50,8 +50,8 @@ function Component(props: Props) {
     ].map(([x, x2], y) => {
       if (y !== 0) {
         return {
-          x: x + unloadEventEnd,
-          x2: x2 + unloadEventEnd,
+          x: Number((x + unloadEventEnd).toFixed(2)),
+          x2: Number((x2 + unloadEventEnd).toFixed(2)),
           y,
         };
       }

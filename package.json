@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@antv/g2": "^5.0.0",
+    "@antv/l7": "^2.14.7",
+    "@antv/l7plot": "^0.5.1",
     "@rollup/plugin-alias": "^4.0.3",
     "ahooks": "^3.7.4",
     "antd": "^5.2.2",

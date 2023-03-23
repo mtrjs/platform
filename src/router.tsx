@@ -3,11 +3,12 @@ import Dashboard from './dashboard';
 import Performance from './performance';
 import Err from './error';
 import ErrorList from './errorList';
+import Overview from './overview';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Dashboard />,
+    element: <Overview />,
   },
   {
     path: '/performance',
