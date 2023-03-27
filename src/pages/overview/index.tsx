@@ -7,7 +7,7 @@ import Visit from './components/visit';
 function Component() {
   const { data, loading } = useRequest(getStat);
 
-  const { province, visit } = data || {};
+  const { province = [], visit } = data || {};
 
   return (
     <div>

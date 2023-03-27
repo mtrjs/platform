@@ -1,14 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import {
-  BankOutlined,
-  ColumnHeightOutlined,
-  BarChartOutlined,
-  BoxPlotOutlined,
-} from '@ant-design/icons';
+import { BankOutlined, ColumnHeightOutlined, BarChartOutlined, BoxPlotOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
 import Router, { router } from './router';
 import styles from './layout.module.less';
+import { useInterval } from 'ahooks';
 const { Header, Sider } = Layout;
 
 const items: MenuProps['items'] = [

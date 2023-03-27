@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Choropleth } from '@antv/l7plot';
-import { Card } from 'antd';
+import { Card, Col, Row, Table, Tooltip } from 'antd';
+import { ProvinceStat } from '@services/overview';
+import { ColumnsType } from 'antd/es/table';
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
 interface Props {
   style?: React.CSSProperties;
-  data?: Record<string, any>[];
+  data?: ProvinceStat[];
 }
 
 function Component(props: Props) {
-  const { style, data } = props;
+  const { style, data: originData } = props;
+
+  const data = useMemo(() => originData?.sort((a, b) => b.value - a.value), [originData]);
 
   useEffect(() => {
     if (!data) return;
-    console.log(data);
     const ct = new Choropleth('container-map', {
       map: {
         type: 'map',
@@ -20,7 +24,6 @@ function Component(props: Props) {
         zoom: 3,
         pitch: 0,
       },
-      // @ts-ignore
       source: {
         data,
         joinBy: {
@@ -76,10 +79,36 @@ function Component(props: Props) {
     };
   }, [data]);
   if (!data) return null;
+
+  const columns: ColumnsType<ProvinceStat> = [
+    {
+      title: '地区',
+      dataIndex: 'name',
+      align: 'center',
+    },
+    { title: '用户量', dataIndex: 'value', align: 'center' },
+  ];
+
   return (
-    <Card title="地域分布" style={style}>
-      <div id="container-map" style={{ width: 800, height: 600 }}></div>
-    </Card>
+    <Row style={style}>
+      <Col span={18}>
+        <Card
+          title="地域分布"
+          extra={
+            <Tooltip title={'help'}>
+              <QuestionCircleOutlined size={30} />
+            </Tooltip>
+          }
+        >
+          <div id="container-map" style={{ height: 600 }}></div>
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card title="用户量排行榜" style={{ marginLeft: 10 }}>
+          <Table rowKey="name" dataSource={data} columns={columns}></Table>
+        </Card>
+      </Col>
+    </Row>
   );
 }
 

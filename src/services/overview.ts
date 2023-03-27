@@ -5,8 +5,13 @@ export interface Visit {
   pv: number;
 }
 
+export interface ProvinceStat {
+  name: string;
+  value: number;
+}
+
 export interface Stat {
-  province: Record<string, any>[];
+  province: ProvinceStat[];
   visit: Visit;
 }
 
