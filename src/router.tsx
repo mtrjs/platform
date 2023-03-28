@@ -1,22 +1,36 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './pages/dashboard';
-import Performance from './pages/performance';
-import Err from './pages/error';
-import ErrorList from './pages/errorList';
-import Overview from './pages/overview';
+import { lazy, Suspense } from 'react';
+
+const Performance = lazy(() => import('./pages/performance'));
+const Overview = lazy(() => import('./pages/overview'));
+const ErrorList = lazy(() => import('./pages/errorList'));
+const Err = lazy(() => import('./pages/error'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Overview />,
+    element: (
+      <Suspense fallback={<div>加载中</div>}>
+        <Overview />
+      </Suspense>
+    ),
   },
   {
     path: '/performance',
-    element: <Performance />,
+    element: (
+      <Suspense fallback={<div>加载中</div>}>
+        <Performance />
+      </Suspense>
+    ),
   },
   {
     path: '/error',
-    element: <Err />,
+    element: (
+      <Suspense fallback={<div>加载中</div>}>
+        <Err />
+      </Suspense>
+    ),
   },
   {
     path: '/resource',
@@ -24,7 +38,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/error/list',
-    element: <ErrorList />,
+    element: (
+      <Suspense fallback={<div>加载中</div>}>
+        <ErrorList />
+      </Suspense>
+    ),
   },
   {
     path: '*',

@@ -5,11 +5,12 @@ import './index.css';
 import Reporter, { Browser } from '@tubefast/core';
 
 const reporter = new Reporter();
+
 reporter.init({
   appId: 'test',
   dsn: 'http://172.16.10.88:3001',
   plugins: [new Browser()],
-  maxPool: 5,
+  maxPool: 10,
 });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
