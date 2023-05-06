@@ -1,23 +1,50 @@
-import { Layout } from 'antd';
 import { useRequest } from 'ahooks';
-import styles from './index.module.less';
-import { getPerfOverview } from '@services/perf';
+import S from './index.module.less';
+import { getPerfOverview } from '@api/perf';
 import Waterfall from './components/waterfall';
 import Perf from './components/perf';
+import { useState } from 'react';
+import { Row, Col } from 'antd';
+import DatePicker from '@components/date-picker';
+import dayjs from 'dayjs';
 
-const { Content } = Layout;
+const { RangePicker } = DatePicker;
 
-function Component() {
-  const { data: overview, loading, error } = useRequest(getPerfOverview);
+const defaultDate: [dayjs.Dayjs, dayjs.Dayjs] = [dayjs().subtract(30, 'd').startOf('d'), dayjs().endOf('d')];
 
-  const { waterfall, index } = overview || {};
+export default function Performance() {
+  const [date, setDate] = useState(defaultDate);
+
+  const handleDateChange = (values: any) => {
+    setDate(values);
+  };
+
+  const {
+    data: overview,
+    loading,
+    refresh,
+  } = useRequest(() => {
+    let startAt;
+    let endAt;
+    if (Array.isArray(date)) {
+      startAt = date[0]?.startOf('d').format('YYYY-MM-DD HH:mm:ss');
+      endAt = date[1]?.endOf('d').format('YYYY-MM-DD HH:mm:ss');
+    }
+    return getPerfOverview({ startAt, endAt });
+  });
+
   return (
-    <Content>
-      <div className={styles.title}>性能指标</div>
-      <Perf loading={loading} data={index} />
-      <Waterfall data={waterfall} />
-    </Content>
+    <div className={S.container}>
+      <Row justify="space-between" className={S.header}>
+        <Col>
+          <div className={S.title}>性能分析</div>
+        </Col>
+        <Col>
+          <RangePicker value={date} onChange={handleDateChange} onOpenChange={(open) => !open && refresh()} />
+        </Col>
+      </Row>
+      <Perf loading={loading} data={overview} />
+      <Waterfall data={overview} />
+    </div>
   );
 }
-
-export default Component;

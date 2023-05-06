@@ -1,18 +1,49 @@
-.performanceCard {
-  .help {
-    display: flex;
-    align-items: center;
-    .label {
-      font-size: 20px;
-      font-weight: 500;
+.container {
+  .performance-card {
+    .help {
+      display: flex;
+      align-items: center;
+
+      .label {
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+      .icon {
+        margin-top: 3px;
+        margin-left: 5px;
+      }
     }
-    .icon {
-      margin-top: 3px;
-      margin-left: 5px;
+
+    .value {
+      font-weight: 600;
+      font-size: 32px;
     }
   }
-  .value {
-    font-size: 32px;
-    font-weight: 600;
+
+  .status-help {
+    .card {
+      width: 18px;
+      height: 14px;
+      margin-left: 12px;
+      border-radius: 2px;
+    }
+
+    .card-perfect {
+      background-color: rgb(40, 201, 137);
+    }
+
+    .card-poor {
+      background-color: rgb(255, 78, 92);
+    }
+
+    .card-mid {
+      background-color: rgb(255, 151, 36);
+    }
+
+    .text {
+      margin-left: 3px;
+      font-size: 14px;
+    }
   }
 }

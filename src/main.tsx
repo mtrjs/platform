@@ -2,19 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Layout from './layout';
 import './index.css';
-import Reporter, { Browser } from '@tubefast/core';
+import { Provider } from 'react-redux';
+import { ConfigProvider } from 'antd';
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+import store from './store';
+import dayjs from 'dayjs';
+import dayjsLocal from 'dayjs/locale/zh-cn';
 
-const reporter = new Reporter();
+import 'antd/lib/style';
+import 'antd/dist/antd.variable.min.css';
 
-reporter.init({
-  appId: 'test',
-  dsn: 'http://172.16.10.88:3001',
-  plugins: [new Browser()],
-  maxPool: 10,
+ConfigProvider.config({
+  theme: {
+    primaryColor: '#ff7626',
+  },
 });
+
+dayjs.locale(dayjsLocal);
+
+const persistor = persistStore(store);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Layout />
+    <ConfigProvider locale={zhCN}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Layout />
+        </PersistGate>
+      </Provider>
+    </ConfigProvider>
   </React.StrictMode>
 );

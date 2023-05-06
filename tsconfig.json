@@ -19,7 +19,11 @@
     "paths": {
       "@utils/*": ["src/utils/*"],
       "@services/*": ["src/services/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@api/*": ["src/api/*"],
+      "@store/*": ["src/store/*"],
+      "@constants/*": ["src/constants/*"],
+      "@slices/*": ["src/slices/*"]
     }
   },
   "include": ["src"],
