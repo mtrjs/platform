@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Layout from './layout';
 import './index.css';
 import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
@@ -9,9 +8,10 @@ import { PersistGate } from 'redux-persist/integration/react';
 import store from './store';
 import dayjs from 'dayjs';
 import dayjsLocal from 'dayjs/locale/zh-cn';
+import zhCN from 'antd/locale/zh_CN';
+import Router from './router';
 
 import 'antd/lib/style';
-import 'antd/dist/antd.variable.min.css';
 
 ConfigProvider.config({
   theme: {
@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <ConfigProvider locale={zhCN}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Layout />
+          <Router />
         </PersistGate>
       </Provider>
     </ConfigProvider>

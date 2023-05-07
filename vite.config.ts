@@ -26,7 +26,6 @@ export default defineConfig((env) => {
       alias: {
         '@utils': path.resolve(__dirname, './src/utils'),
         '@api': path.resolve(__dirname, './src/api'),
-        '@services': path.resolve(__dirname, './src/services'),
         '@components': path.resolve(__dirname, './src/components'),
         '@store': path.resolve(__dirname, './src/store'),
         '@constants': path.resolve(__dirname, './src/constants'),

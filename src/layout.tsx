@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { BankOutlined, ColumnHeightOutlined, BarChartOutlined, BoxPlotOutlined } from '@ant-design/icons';
+import { BankOutlined, ColumnHeightOutlined, BoxPlotOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
-import Router, { router } from './router';
+import { router } from './router';
 import styles from './layout.module.less';
+import { ROUTE_PATH } from '@constants/routes';
+import { Outlet } from 'react-router-dom';
 const { Header, Sider } = Layout;
 
 const items: MenuProps['items'] = [
-  { label: 'Dashboard', key: '/', icon: <BankOutlined /> },
-  { label: '性能分析', key: '/performance', icon: <ColumnHeightOutlined /> },
-  { label: '资源分析', key: '/resource', icon: <BarChartOutlined /> },
-  { label: '异常分析', key: '/error', icon: <BoxPlotOutlined /> },
+  { label: 'Dashboard', key: ROUTE_PATH.overview, icon: <BankOutlined /> },
+  { label: '性能分析', key: ROUTE_PATH.performance, icon: <ColumnHeightOutlined /> },
+  { label: '异常分析', key: ROUTE_PATH.exception, icon: <BoxPlotOutlined /> },
 ];
 
 const App: React.FC = () => {
@@ -47,7 +48,7 @@ const App: React.FC = () => {
           />
         </Sider>
         <Layout style={{ padding: '24px 24px 24px' }}>
-          <Router />
+          <Outlet />
         </Layout>
       </Layout>
     </Layout>

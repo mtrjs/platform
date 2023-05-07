@@ -4,9 +4,6 @@
 - pages 页面
   - overview 数据总览
   - performance 性能数据
-  - error 异常数据
-  - errorList 异常数据列表
-- services api 请求包装
 - utils 工具
   - request 请求封装
 - router.tsx 路由

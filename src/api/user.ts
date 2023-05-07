@@ -1,12 +1,12 @@
 import * as request from '@utils/request';
 
 interface LoginBody {
-  name: string;
+  account: string;
   password: string;
 }
 
 interface User {
-  name: string;
+  account: string;
   access_token: string;
   id: string;
 }

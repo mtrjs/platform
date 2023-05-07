@@ -1,46 +1,64 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Dashboard from './pages/dashboard';
 import { lazy, Suspense } from 'react';
+import { ROUTE_PATH } from '@constants/routes';
+import Login from './pages/login';
+import Layout from './layout';
 
 const Performance = lazy(() => import('./pages/performance'));
 const Overview = lazy(() => import('./pages/overview'));
-const ErrorList = lazy(() => import('./pages/errorList'));
-const Err = lazy(() => import('./pages/error'));
+const Exception = lazy(() => import('./pages/exception'));
+const JsExceptionList = lazy(() => import('./pages/js-exception-list'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
+    children: [
+      {
+        path: ROUTE_PATH.overview,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <Overview />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
+  },
+  {
+    path: '/',
+    children: [
+      {
+        path: ROUTE_PATH.performance,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <Performance />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
+  },
+  {
+    path: ROUTE_PATH.exception,
     element: (
       <Suspense fallback={<div>加载中</div>}>
-        <Overview />
+        <Exception />
       </Suspense>
     ),
   },
   {
-    path: '/performance',
+    path: ROUTE_PATH.jsExceptionList,
     element: (
       <Suspense fallback={<div>加载中</div>}>
-        <Performance />
+        <JsExceptionList />
       </Suspense>
     ),
   },
   {
-    path: '/error',
+    path: ROUTE_PATH.login,
     element: (
       <Suspense fallback={<div>加载中</div>}>
-        <Err />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/resource',
-    element: <div>resource</div>,
-  },
-  {
-    path: '/error/list',
-    element: (
-      <Suspense fallback={<div>加载中</div>}>
-        <ErrorList />
+        <Login />
       </Suspense>
     ),
   },
