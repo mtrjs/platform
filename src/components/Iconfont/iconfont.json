@@ -1,0 +1,30 @@
+{
+  "id": "4029755",
+  "name": "tubit",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9495521",
+      "name": "设备类型",
+      "font_class": "shebeileixing",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "19818698",
+      "name": "仪器型号",
+      "font_class": "yiqixinghao",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "15838540",
+      "name": "time",
+      "font_class": "time",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    }
+  ]
+}
