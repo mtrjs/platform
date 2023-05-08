@@ -33,4 +33,6 @@ const store = configureStore({
     : false,
 });
 
+export type AppDispatch = typeof store.dispatch;
+
 export default store;

@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { ROUTE_PATH } from '@constants/routes';
 import Login from './pages/login';
-import Layout from './layout';
+import Layout from './pages/layout';
 
 const Performance = lazy(() => import('./pages/performance'));
 const Overview = lazy(() => import('./pages/overview'));

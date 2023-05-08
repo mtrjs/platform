@@ -17,3 +17,10 @@ interface UserModel {
   /** 用户 token */
   access_token?: string;
 }
+
+interface ApplicationModel {
+  env: string;
+  app_id: string;
+  name: string;
+  list: ApplicationInfo[];
+}

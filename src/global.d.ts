@@ -1,6 +1,8 @@
 import { Dayjs } from 'dayjs';
 
 declare global {
+  type AnyAction = PayloadAction;
+  type Dispatch = AppDispatch;
   interface Pager {
     page: number;
     pageSize: number;
