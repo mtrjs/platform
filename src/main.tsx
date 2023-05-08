@@ -9,7 +9,7 @@ import store from './store';
 import dayjs from 'dayjs';
 import dayjsLocal from 'dayjs/locale/zh-cn';
 import zhCN from 'antd/locale/zh_CN';
-import Router from './router';
+import App from './app';
 
 import 'antd/lib/style';
 
@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <ConfigProvider locale={zhCN}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Router />
+          <App />
         </PersistGate>
       </Provider>
     </ConfigProvider>

@@ -6,7 +6,8 @@ import { router } from '../../router';
 import S from './index.module.less';
 import { ROUTE_PATH } from '@constants/routes';
 import { Outlet } from 'react-router-dom';
-const { Header, Sider } = Layout;
+import Header from './header';
+const { Sider } = Layout;
 
 const items: MenuProps['items'] = [
   { label: '访问分析', key: ROUTE_PATH.overview, icon: <BankOutlined /> },

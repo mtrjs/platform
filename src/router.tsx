@@ -8,6 +8,7 @@ const Performance = lazy(() => import('./pages/performance'));
 const Overview = lazy(() => import('./pages/overview'));
 const Exception = lazy(() => import('./pages/exception'));
 const JsExceptionList = lazy(() => import('./pages/js-exception-list'));
+const RequestExceptionList = lazy(() => import('./pages/request-exception-list'));
 
 export const router = createBrowserRouter([
   {
@@ -39,20 +40,46 @@ export const router = createBrowserRouter([
     element: <Layout />,
   },
   {
-    path: ROUTE_PATH.exception,
-    element: (
-      <Suspense fallback={<div>加载中</div>}>
-        <Exception />
-      </Suspense>
-    ),
+    path: '/',
+    children: [
+      {
+        path: ROUTE_PATH.exception,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <Exception />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
   },
   {
-    path: ROUTE_PATH.jsExceptionList,
-    element: (
-      <Suspense fallback={<div>加载中</div>}>
-        <JsExceptionList />
-      </Suspense>
-    ),
+    path: '/',
+    children: [
+      {
+        path: ROUTE_PATH.jsExceptionList,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <JsExceptionList />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
+  },
+  {
+    path: '/',
+    children: [
+      {
+        path: ROUTE_PATH.requestExceptionList,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <RequestExceptionList />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
   },
   {
     path: ROUTE_PATH.login,

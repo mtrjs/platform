@@ -1,7 +1,5 @@
 import { Cascader, Dropdown, Layout } from 'antd';
-import React, { useMemo, useState } from 'react';
-import userAvatar from 'assets/user.png';
-import logo from 'assets/logo.svg';
+import { useMemo, useState } from 'react';
 import CreateApp from '../create-app';
 import S from './index.module.less';
 import storage from '@utils/storage';
@@ -61,7 +59,7 @@ export default function Component() {
 
   return (
     <Header className={S.container} style={{ background: '#fff' }}>
-      <img src={logo} className={S.logo} />
+      <img className={S.logo} />
       {/* <div className={S.logo}>监控平台</div> */}
       <div className={S.setting}>
         <Cascader
@@ -71,7 +69,7 @@ export default function Component() {
           className={S.app}
         />
         <Dropdown menu={{ items: settingItems }} placement="bottom">
-          <img src={userAvatar} className={S.user} />
+          <img className={S.user} />
         </Dropdown>
       </div>
       <CreateApp
