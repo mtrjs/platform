@@ -44,3 +44,17 @@ export interface DeviceStat {
 export const getDevice = (params: GetDeviceParams) => {
   return request.get<Response<DeviceStat[]>>('/overview/device', { params }).then((res) => res.data);
 };
+
+export interface ChannelStat {
+  label: string;
+  value: number;
+}
+
+export interface GetChannelParams {
+  startAt?: string;
+  endAt?: string;
+}
+
+export const getChannel = (params: GetChannelParams) => {
+  return request.get<Response<ChannelStat[]>>('/overview/channel-stat', { params }).then((res) => res.data);
+};

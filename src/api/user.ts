@@ -22,7 +22,6 @@ export function getUser() {
 export interface ApplicationInfo {
   app_id: string;
   createdAt: string;
-  env: string;
   id: number;
   type: number;
   name: string;
@@ -36,7 +35,6 @@ export function getApplicationList() {
 interface CreateApplicationBody {
   name: string;
   type: number;
-  env: string;
 }
 
 export function createApplication(data: CreateApplicationBody) {

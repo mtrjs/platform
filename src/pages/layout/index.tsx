@@ -6,6 +6,7 @@ import { router } from '../../router';
 import S from './index.module.less';
 import { ROUTE_PATH } from '@constants/routes';
 import { Outlet } from 'react-router-dom';
+import Header from './header';
 const { Sider } = Layout;
 
 const items: MenuProps['items'] = [{ label: '访问分析', key: ROUTE_PATH.overview, icon: <BankOutlined /> }];
@@ -25,8 +26,9 @@ const App: React.FC = () => {
 
   return (
     <Layout style={{ height: '100%' }}>
+      <Header />
       <Layout>
-        {/* <Sider width={240} style={{ background: colorBgContainer }} theme="light">
+        <Sider width={240} style={{ background: colorBgContainer }} theme="light">
           <Menu
             className={S.customMenu}
             mode="inline"
@@ -40,7 +42,7 @@ const App: React.FC = () => {
               setSelectKeys(key);
             }}
           />
-        </Sider> */}
+        </Sider>
         <Layout style={{ padding: '24px 24px 24px' }}>
           <Outlet />
         </Layout>

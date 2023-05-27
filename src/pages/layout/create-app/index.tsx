@@ -11,7 +11,6 @@ const { useForm } = Form;
 interface AppInfo {
   name: string;
   type: number;
-  env: string[];
 }
 
 interface Props extends ModalProps {
@@ -24,8 +23,8 @@ export default function CreateApp(props: Props) {
   const [form] = useForm<AppInfo>();
 
   const onCreate = async () => {
-    const { name, type, env } = await form.validateFields();
-    await createApplication({ name, type, env: env.join(',') });
+    const { name, type } = await form.validateFields();
+    await createApplication({ name, type });
     message.success('应用创建成功!');
     dispatch(fetchApplicationList());
     form.resetFields();
@@ -43,13 +42,6 @@ export default function CreateApp(props: Props) {
             <Radio value={0}>web/H5 应用</Radio>
             <Radio value={1}>小程序</Radio>
           </Radio.Group>
-        </Form.Item>
-        <Form.Item label="运行环境" rules={[{ required: true, message: '请选择运行环境' }]} name="env">
-          <Checkbox.Group>
-            <Checkbox value="dev">dev</Checkbox>
-            <Checkbox value="test">test</Checkbox>
-            <Checkbox value="prod">prod</Checkbox>
-          </Checkbox.Group>
         </Form.Item>
       </Form>
     </Modal>
