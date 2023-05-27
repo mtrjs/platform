@@ -8,6 +8,7 @@ import S from './index.module.less';
 import DatePicker from '@components/date-picker';
 import dayjs from 'dayjs';
 import Device from '../overview/components/device';
+import Channel from './components/channel';
 
 const { RangePicker } = DatePicker;
 
@@ -65,6 +66,7 @@ export default function Overview() {
       <Visit data={visit} loading={statLoading} />
       <Map style={{ marginTop: 20 }} data={province} />
       <Device dateOpen={dateOpen} startAt={startAt} endAt={endAt} />
+      <Channel dateOpen={dateOpen} startAt={startAt} endAt={endAt} />
     </div>
   );
 }
