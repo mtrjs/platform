@@ -10,7 +10,7 @@ const { Header } = Layout;
 
 export default function Component() {
   const [createAppVisible, setCreateAppVisible] = useState(false);
-  const { list: applications, app_id, env } = useSelector<StoreState, ApplicationModel>((state) => state.application);
+  const { list: applications, app_id } = useSelector<StoreState, ApplicationModel>((state) => state.application);
 
   const dispatch = useDispatch();
 
