@@ -1,4 +1,4 @@
-import { Cascader, Dropdown, Layout, Select } from 'antd';
+import { Dropdown, Layout, Select } from 'antd';
 import { useMemo, useState } from 'react';
 import CreateApp from '../create-app';
 import S from './index.module.less';
@@ -7,12 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import application from '@slices/application';
 
 const { Header } = Layout;
-
-interface CascaderOption {
-  value: string;
-  label: string;
-  children?: CascaderOption[];
-}
 
 export default function Component() {
   const [createAppVisible, setCreateAppVisible] = useState(false);
@@ -35,8 +29,8 @@ export default function Component() {
   };
 
   const handleApplicationChange = (value: any) => {
-    const [app_id, env] = value;
-    dispatch(application.actions.setApplication({ app_id, env }));
+    const [app_id] = value;
+    dispatch(application.actions.setApplication({ app_id }));
   };
 
   const settingItems = useMemo(

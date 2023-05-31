@@ -12,11 +12,9 @@ const applicationSlice = createSlice({
   name: 'application',
   initialState,
   reducers: {
-    setApplication(state, action: PayloadAction<Pick<ApplicationInfo, 'app_id' | 'env'>>) {
-      const { app_id, env = '' } = action.payload;
-      const envs = env.split(',');
-      const defaultEnv = envs[0] || '';
-      Object.assign(state, { app_id, env: defaultEnv });
+    setApplication(state, action: PayloadAction<Pick<ApplicationInfo, 'app_id'>>) {
+      const { app_id } = action.payload;
+      Object.assign(state, { app_id });
       setTimeout(() => {
         location.replace('/');
       }, 100);
@@ -27,10 +25,8 @@ const applicationSlice = createSlice({
       const list = action.payload;
       state.list = list;
       if (!state.app_id) {
-        const { app_id, env = '' } = list[0];
-        const envs = env.split(',');
-        const defaultEnv = envs[0] || '';
-        Object.assign(state, { app_id, env: defaultEnv });
+        const { app_id } = list[0];
+        Object.assign(state, { app_id });
       }
     });
   },
