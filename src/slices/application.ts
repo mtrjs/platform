@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ApplicationInfo, getApplicationList } from '@api/user';
 
 const initialState: ApplicationState = {
-  env: '',
   app_id: '',
   name: '',
   list: [],

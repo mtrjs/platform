@@ -19,7 +19,6 @@ interface UserModel {
 }
 
 interface ApplicationModel {
-  env: string;
   app_id: string;
   name: string;
   list: ApplicationInfo[];

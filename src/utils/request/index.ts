@@ -3,7 +3,7 @@ import Axios, { AxiosRequestConfig } from 'axios';
 import store from '../../store';
 import storage from '@utils/storage';
 
-const url = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3001' : 'https://octopus.dev.rabbitpre.com/api';
+const url = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3001' : 'https://mtr-api.xjq.icu';
 
 const instance = Axios.create({
   baseURL: `${url}/v1`,
@@ -12,14 +12,10 @@ const instance = Axios.create({
 
 instance.interceptors.request.use((config) => {
   const token = store.getState().user.access_token;
-  const { app_id, env } = store.getState().application;
+  const { app_id } = store.getState().application;
 
   if (app_id) {
     config.headers['app-id'] = app_id;
-  }
-
-  if (env) {
-    config.headers['app-env'] = env;
   }
 
   if (token) {
