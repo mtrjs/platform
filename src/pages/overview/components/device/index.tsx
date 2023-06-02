@@ -39,7 +39,6 @@ function Device(props: Props) {
         label: {
           type: 'spider',
           labelHeight: 28,
-          content: '{name}\n{percentage}',
         },
         interactions: [{ type: 'element-selected' }, { type: 'element-active' }],
       });
