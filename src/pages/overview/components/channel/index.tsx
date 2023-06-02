@@ -32,7 +32,7 @@ export default function Component(props: Props) {
         appendPadding: 10,
         data,
         angleField: 'value',
-        colorField: 'type',
+        colorField: 'label',
         radius: 0.75,
         label: {
           type: 'spider',
