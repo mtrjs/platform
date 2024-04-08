@@ -54,4 +54,8 @@ export function post<T = any, D = any>(url: string, data?: D, config?: AxiosRequ
   return instance.post<T, T>(url, data, config);
 }
 
+export function del<T = any, D = any>(url: string, config?: AxiosRequestConfig<D>) {
+  return instance.delete<T, T>(url, config);
+}
+
 export default instance;

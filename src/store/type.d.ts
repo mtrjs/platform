@@ -1,6 +1,7 @@
 type AppState = AppModel;
 type UserState = UserModel;
 type ApplicationState = ApplicationModel;
+type SettingState = SettingModel;
 
 interface StoreState {
   app: AppState;
