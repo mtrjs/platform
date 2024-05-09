@@ -6,6 +6,7 @@ import Layout from './pages/layout';
 import Performance from './pages/performance';
 import JsException from './pages/js-exception';
 import RequestException from './pages/request-exception/components/trend';
+import JsExceptionList from './pages/js-exception-list';
 
 const Overview = lazy(() => import('./pages/overview'));
 
@@ -50,7 +51,14 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
-
+      {
+        path: ROUTE_PATH.jsExceptionList,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <JsExceptionList />
+          </Suspense>
+        ),
+      },
       {
         path: ROUTE_PATH.requestException,
         element: (

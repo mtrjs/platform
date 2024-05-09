@@ -31,7 +31,7 @@ instance.interceptors.response.use(
       message.error(msg);
       return Promise.reject();
     }
-    return response.data;
+    return response.data.data;
   },
   (err) => {
     const { response = {} } = err;

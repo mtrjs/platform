@@ -29,7 +29,7 @@ export interface ApplicationInfo {
 }
 
 export function getApplicationList() {
-  return request.get<Response<ApplicationInfo[]>>('/user/application/list');
+  return request.get<ApplicationInfo[]>('/user/application/list');
 }
 
 interface CreateApplicationBody {

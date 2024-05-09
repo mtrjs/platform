@@ -32,8 +32,7 @@ const applicationSlice = createSlice({
 });
 
 export const fetchApplicationList = createAsyncThunk('application/list', async () => {
-  const { data } = await getApplicationList();
-  return data;
+  return getApplicationList();
 });
 
 export default applicationSlice;

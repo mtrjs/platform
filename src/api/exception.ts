@@ -32,7 +32,7 @@ export interface GetJsExceptionListParams extends Pager, DateFilter {
 }
 
 export function getJsExceptionList(params: GetJsExceptionListParams) {
-  return request.post<ResponseList<IJsException>>(`${apiPrefix}/exception/js/list`, params);
+  return request.get<ResponseList<IJsException>>(`${apiPrefix}/exception/js/list`, { params });
 }
 
 export interface IRequestException {

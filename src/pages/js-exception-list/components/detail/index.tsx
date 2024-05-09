@@ -1,19 +1,10 @@
-/*
- * 异常详情抽屉组件
- *
- * @Author: 夏洁琼
- * @Date: 2023-04-20 19:38:06
- *
- * Copyright © 2014-2023 Rabbitpre.com. All Rights Reserved.
- */
-
+import { useEffect } from 'react';
 import { useRequest } from 'ahooks';
 import { Drawer, Skeleton } from 'antd';
 import { DrawerProps } from 'antd/es/drawer';
-import { getJsException } from 'api/exception';
-import React, { useEffect } from 'react';
+import { getJsException } from '@api/exception';
 import S from './index.module.less';
-import Icon from 'components/Iconfont';
+import Icon from '@components/Iconfont';
 
 interface Props extends DrawerProps {
   open: boolean;
@@ -101,7 +92,7 @@ export default function Detail(props: Props) {
           <div className={S.ua}>{ua}</div>
           <div className={S.subtitle}>堆栈信息</div>
           <div>
-            {stack?.split('\n').map(stack => {
+            {stack?.split('\n').map((stack) => {
               return <div className={S.stack}>{stack}</div>;
             })}
           </div>
@@ -111,14 +102,7 @@ export default function Detail(props: Props) {
   };
 
   return (
-    <Drawer
-      width={600}
-      className={S.container}
-      placement="right"
-      onClose={onClose}
-      open={open}
-      closable={false}
-    >
+    <Drawer width={600} className={S.container} placement="right" onClose={onClose} open={open} closable={false}>
       {renderContent()}
     </Drawer>
   );
