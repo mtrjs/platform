@@ -9,7 +9,10 @@ import { Outlet } from 'react-router-dom';
 import Header from './header';
 const { Sider } = Layout;
 
-const items: MenuProps['items'] = [{ label: '访问分析', key: ROUTE_PATH.overview, icon: <BankOutlined /> }];
+const items: MenuProps['items'] = [
+  { label: '访问分析', key: ROUTE_PATH.overview, icon: <BankOutlined /> },
+  { label: '访问分析', key: ROUTE_PATH.overview, icon: <BankOutlined /> },
+];
 
 const App: React.FC = () => {
   const {

@@ -6,6 +6,181 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "34064566",
+      "name": "抖音",
+      "font_class": "douyin",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "35400446",
+      "name": "firefox",
+      "font_class": "firefox",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "217197",
+      "name": "mac",
+      "font_class": "mac",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "3176588",
+      "name": "Android",
+      "font_class": "Android",
+      "unicode": "e9e0",
+      "unicode_decimal": 59872
+    },
+    {
+      "icon_id": "3846904",
+      "name": "Windows",
+      "font_class": "Windows",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "5968413",
+      "name": "WeChat2 ",
+      "font_class": "WeChat",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "11983530",
+      "name": "chrome",
+      "font_class": "chrome",
+      "unicode": "ea09",
+      "unicode_decimal": 59913
+    },
+    {
+      "icon_id": "13743955",
+      "name": "mac",
+      "font_class": "mac1",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "16627017",
+      "name": "Edge",
+      "font_class": "Edge-01",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "19448086",
+      "name": "IE",
+      "font_class": "IE",
+      "unicode": "eaab",
+      "unicode_decimal": 60075
+    },
+    {
+      "icon_id": "34065043",
+      "name": "Safari浏览器",
+      "font_class": "Safariliulanqi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1348248",
+      "name": "网络",
+      "font_class": "wangluo",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "1727379",
+      "name": "33资源-线性",
+      "font_class": "ziyuan-xianxing",
+      "unicode": "e8a4",
+      "unicode_decimal": 59556
+    },
+    {
+      "icon_id": "5961331",
+      "name": "js",
+      "font_class": "js",
+      "unicode": "ec68",
+      "unicode_decimal": 60520
+    },
+    {
+      "icon_id": "12842732",
+      "name": "w_分布",
+      "font_class": "w_fenbu",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "1136367",
+      "name": "设备列表",
+      "font_class": "list",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "569728",
+      "name": "统计分析",
+      "font_class": "tongjifenxi",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "3758066",
+      "name": "指标分析",
+      "font_class": "zhibiaofenxi",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "6429420",
+      "name": "统计分析",
+      "font_class": "tongjifenxi1",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "8329620",
+      "name": "统计分析",
+      "font_class": "tongjifenxi2",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
+      "icon_id": "10465937",
+      "name": "数据分析",
+      "font_class": "shujufenxi",
+      "unicode": "e7b9",
+      "unicode_decimal": 59321
+    },
+    {
+      "icon_id": "1089200",
+      "name": "系统性能",
+      "font_class": "xitongxingneng",
+      "unicode": "e76e",
+      "unicode_decimal": 59246
+    },
+    {
+      "icon_id": "1382572",
+      "name": "性能",
+      "font_class": "xingneng",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "2076259",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e88f",
+      "unicode_decimal": 59535
+    },
+    {
+      "icon_id": "10056247",
+      "name": "分析",
+      "font_class": "fenxi",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    },
+    {
       "icon_id": "9495521",
       "name": "设备类型",
       "font_class": "shebeileixing",

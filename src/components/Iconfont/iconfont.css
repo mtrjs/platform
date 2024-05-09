@@ -1,27 +1,127 @@
-/* stylelint-disable font-family-no-missing-generic-family-keyword */
 @font-face {
-  font-family: iconfont; /* Project id 4029755 */
-  src: url('iconfont.woff2?t=1682057464651') format('woff2'),
-    url('iconfont.woff?t=1682057464651') format('woff'),
-    url('iconfont.ttf?t=1682057464651') format('truetype');
+  font-family: 'iconfont'; /* Project id 4029755 */
+  /* Color fonts */
+  src: url('iconfont.woff2?t=1696730654206') format('woff2'),
+    url('iconfont.woff?t=1696730654206') format('woff'),
+    url('iconfont.ttf?t=1696730654206') format('truetype');
 }
 
 .iconfont {
+  font-family: 'iconfont' !important;
   font-size: 16px;
-  font-family: iconfont !important;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shebeileixing::before {
+.icon-douyin:before {
+  content: '\e601';
+}
+
+.icon-firefox:before {
+  content: '\e600';
+}
+
+.icon-mac:before {
+  content: '\e667';
+}
+
+.icon-Android:before {
+  content: '\e9e0';
+}
+
+.icon-Windows:before {
+  content: '\e6a0';
+}
+
+.icon-WeChat:before {
+  content: '\e681';
+}
+
+.icon-chrome:before {
+  content: '\ea09';
+}
+
+.icon-mac1:before {
+  content: '\e689';
+}
+
+.icon-Edge-01:before {
+  content: '\e612';
+}
+
+.icon-IE:before {
+  content: '\eaab';
+}
+
+.icon-Safariliulanqi:before {
+  content: '\e60c';
+}
+
+.icon-wangluo:before {
+  content: '\e610';
+}
+
+.icon-ziyuan-xianxing:before {
+  content: '\e8a4';
+}
+
+.icon-js:before {
+  content: '\ec68';
+}
+
+.icon-w_fenbu:before {
+  content: '\e671';
+}
+
+.icon-list:before {
+  content: '\e63e';
+}
+
+.icon-tongjifenxi:before {
+  content: '\e65b';
+}
+
+.icon-zhibiaofenxi:before {
+  content: '\e694';
+}
+
+.icon-tongjifenxi1:before {
+  content: '\e619';
+}
+
+.icon-tongjifenxi2:before {
+  content: '\e6db';
+}
+
+.icon-shujufenxi:before {
+  content: '\e7b9';
+}
+
+.icon-xitongxingneng:before {
+  content: '\e76e';
+}
+
+.icon-xingneng:before {
+  content: '\e653';
+}
+
+.icon-liebiao:before {
+  content: '\e88f';
+}
+
+.icon-fenxi:before {
+  content: '\e709';
+}
+
+.icon-shebeileixing:before {
   content: '\e62e';
 }
 
-.icon-yiqixinghao::before {
+.icon-yiqixinghao:before {
   content: '\e609';
 }
 
-.icon-time::before {
+.icon-time:before {
   content: '\e680';
 }
