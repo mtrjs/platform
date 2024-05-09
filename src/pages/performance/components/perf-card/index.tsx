@@ -1,7 +1,7 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { Card, Tooltip } from 'antd';
 import React from 'react';
-import S from './index.less';
+import S from './index.module.less';
 
 export default function PerformanceCard(props: {
   label: string;

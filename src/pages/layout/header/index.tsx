@@ -10,14 +10,14 @@ const { Header } = Layout;
 
 export default function Component() {
   const [createAppVisible, setCreateAppVisible] = useState(false);
-  const { list: applications, app_id } = useSelector<StoreState, ApplicationModel>((state) => state.application);
+  const { list: applications, appId } = useSelector<StoreState, ApplicationModel>((state) => state.application);
 
   const dispatch = useDispatch();
 
   const applicationsOptions = useMemo(() => {
     return applications.map((o) => {
-      const { name, app_id } = o;
-      return { label: name, value: app_id };
+      const { name, appId } = o;
+      return { label: name, value: appId };
     }, []);
   }, [applications]);
 
@@ -29,8 +29,8 @@ export default function Component() {
   };
 
   const handleApplicationChange = (value: any) => {
-    const [app_id] = value;
-    dispatch(application.actions.setApplication({ app_id }));
+    const [appId] = value;
+    dispatch(application.actions.setApplication({ appId }));
   };
 
   const settingItems = useMemo(
@@ -51,7 +51,7 @@ export default function Component() {
     <Header className={S.container} style={{ background: '#fff' }}>
       <img className={S.logo} />
       <div className={S.setting}>
-        <Select value={app_id} options={applicationsOptions} onChange={handleApplicationChange} className={S.app} />
+        <Select value={appId} options={applicationsOptions} onChange={handleApplicationChange} className={S.app} />
         <Dropdown menu={{ items: settingItems }} placement="bottom">
           <img className={S.user} />
         </Dropdown>

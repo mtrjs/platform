@@ -1,5 +1,6 @@
 export const ROUTE_PATH = {
   performance: '/performance',
+  performanceOverview: '/performance/overview',
   overview: '/',
   home: '/',
   login: '/login',

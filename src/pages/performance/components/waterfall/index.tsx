@@ -1,19 +1,10 @@
-/*
- * 性能加载瀑布图
- *
- * @Author: 夏洁琼
- * @Date: 2023-04-03 11:06:32
- *
- * Copyright © 2014-2023 Rabbitpre.com. All Rights Reserved.
- */
-
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import * as Highcharts from 'highcharts';
 import Exporting from 'highcharts/modules/exporting';
 import xrange from 'highcharts/modules/xrange';
 import accessibility from 'highcharts/modules/accessibility';
 import { Card } from 'antd';
-import { PerfOverviewWaterfall } from 'api/perf';
+import { PerfOverviewWaterfall } from '@api/perf';
 
 xrange(Highcharts);
 Exporting(Highcharts);
@@ -27,7 +18,7 @@ export default function Waterfall(props: Props) {
   const { data } = props;
 
   useEffect(() => {
-    let chart;
+    let chart: any;
     if (data) {
       const {
         domainLookupStart,
@@ -87,14 +78,7 @@ export default function Waterfall(props: Props) {
           title: {
             text: '',
           },
-          categories: [
-            'DNS 寻址',
-            'TCP 连接',
-            '首字节网络请求',
-            '内容传输',
-            'DOM 解析',
-            '资源加载',
-          ],
+          categories: ['DNS 寻址', 'TCP 连接', '首字节网络请求', '内容传输', 'DOM 解析', '资源加载'],
           reversed: true,
         },
         series: [

@@ -1,7 +1,5 @@
 import * as request from '@utils/request';
 
-const apiPrefix = '/api/content/octopus';
-
 export interface GetAlarmRuleParams extends Pager {
   name?: string;
 }
@@ -20,7 +18,7 @@ export interface IAlarmRule {
 }
 
 export function getAlarmRuleList(params: GetAlarmRuleParams) {
-  return request.post<ResponseList<IAlarmRule>>(`${apiPrefix}/alarm/rule/list`, params);
+  return request.post<ResponseList<IAlarmRule>>(`/alarm/rule/list`, params);
 }
 
 export interface AlarmRule {
@@ -42,11 +40,11 @@ export interface CreateAlarmRuleParams {
 }
 
 export const updateAlarmRule = (params: CreateAlarmRuleParams) => {
-  return request.post(`${apiPrefix}/alarm/rule`, params);
+  return request.post(`/alarm/rule`, params);
 };
 
 export function deleteRule(params: { id: string }) {
-  return request.del(`${apiPrefix}/alarm/rule/${params.id}`);
+  return request.del('/alarm/rule/${params.id}');
 }
 
 export enum AlarmNoticeType {

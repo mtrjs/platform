@@ -1,7 +1,5 @@
 import * as request from '@utils/request';
 
-const apiPrefix = '/api/content/octopus';
-
 export interface PerfOverviewWaterfall {
   unloadEventStart: number;
   unloadEventEnd: number;
@@ -24,12 +22,9 @@ export interface PerfOverviewWaterfall {
 }
 
 export interface PerfOverviewIndex {
-  fcp?: number;
-  lcp?: number;
-  ttfb?: number;
-  tti?: number;
-  fid?: number;
-  cls?: number;
+  FCP?: number;
+  LCP?: number;
+  TTFB?: number;
 }
 
 interface GetPerfOverviewParams {
@@ -38,7 +33,9 @@ interface GetPerfOverviewParams {
 }
 
 export const getPerfOverview = (params: GetPerfOverviewParams) => {
-  return request.get<PerfOverviewWaterfall & PerfOverviewIndex>(`${apiPrefix}/performance/overview`, { params });
+  return request
+    .get<Response<PerfOverviewWaterfall & PerfOverviewIndex>>(`/performance/overview`, { params })
+    .then((res) => res.data);
 };
 
 export interface GetPerfListParams extends Pager {
@@ -81,11 +78,11 @@ export type PerfDetail = PerfOverviewWaterfall & {
 };
 
 export const getPerfList = (params: GetPerfListParams) => {
-  return request.post<ResponseList<PerfDetail>>(`${apiPrefix}/performance/list`, params);
+  return request.post<ResponseList<PerfDetail>>(`/performance/list`, params);
 };
 
 export const getPerfDetail = (params: { id: string }) => {
-  return request.get<PerfDetail>(`${apiPrefix}/performance`, { params });
+  return request.get<PerfDetail>(`/performance`, { params });
 };
 
 export interface GetPerfResourceListParams extends Pager {
@@ -111,5 +108,5 @@ export interface IPerfResource {
 export type InitiatorType = 'script' | 'link' | 'img';
 
 export const getPerfResourceList = (params: GetPerfListParams) => {
-  return request.post<ResponseList<IPerfResource>>(`${apiPrefix}/performance/resource/list`, params);
+  return request.post<ResponseList<IPerfResource>>(`/performance/resource/list`, params);
 };

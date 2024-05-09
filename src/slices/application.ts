@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ApplicationInfo, getApplicationList } from '@api/user';
 
 const initialState: ApplicationState = {
-  app_id: '',
+  appId: '',
   name: '',
   list: [],
 };
@@ -11,9 +11,9 @@ const applicationSlice = createSlice({
   name: 'application',
   initialState,
   reducers: {
-    setApplication(state, action: PayloadAction<Pick<ApplicationInfo, 'app_id'>>) {
-      const { app_id } = action.payload;
-      Object.assign(state, { app_id });
+    setApplication(state, action: PayloadAction<Pick<ApplicationInfo, 'appId'>>) {
+      const { appId } = action.payload;
+      Object.assign(state, { appId });
       setTimeout(() => {
         location.replace('/');
       }, 100);
@@ -23,9 +23,9 @@ const applicationSlice = createSlice({
     builder.addCase(fetchApplicationList.fulfilled, (state, action) => {
       const list = action.payload;
       state.list = list;
-      if (!state.app_id) {
-        const { app_id } = list[0];
-        Object.assign(state, { app_id });
+      if (!state.appId) {
+        const { appId } = list[0];
+        Object.assign(state, { appId });
       }
     });
   },

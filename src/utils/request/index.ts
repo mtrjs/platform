@@ -12,10 +12,10 @@ const instance = Axios.create({
 
 instance.interceptors.request.use((config) => {
   const token = store.getState().user.access_token;
-  const { app_id } = store.getState().application;
+  const { appId } = store.getState().application;
 
-  if (app_id) {
-    config.headers['app-id'] = app_id;
+  if (appId) {
+    config.headers['app-id'] = appId;
   }
 
   if (token) {

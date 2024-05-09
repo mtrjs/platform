@@ -20,7 +20,7 @@ interface UserModel {
 }
 
 interface ApplicationModel {
-  app_id: string;
+  appId: string;
   name: string;
   list: ApplicationInfo[];
 }

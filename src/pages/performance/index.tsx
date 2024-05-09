@@ -43,6 +43,7 @@ export default function Performance() {
     }
     return getPerfOverview({ startAt, endAt });
   });
+  console.log(overview);
 
   return (
     <div className={S.container}>

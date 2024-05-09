@@ -3,6 +3,9 @@ import { lazy, Suspense } from 'react';
 import { ROUTE_PATH } from '@constants/routes';
 import Login from './pages/login';
 import Layout from './pages/layout';
+import Performance from './pages/performance';
+import JsException from './pages/js-exception';
+import RequestException from './pages/request-exception/components/trend';
 
 const Overview = lazy(() => import('./pages/overview'));
 
@@ -15,6 +18,44 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div>加载中</div>}>
             <Overview />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
+  },
+  {
+    path: ROUTE_PATH.performance,
+    children: [
+      {
+        path: ROUTE_PATH.performanceOverview,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <Performance />
+          </Suspense>
+        ),
+      },
+    ],
+    element: <Layout />,
+  },
+
+  {
+    path: ROUTE_PATH.exception,
+    children: [
+      {
+        path: ROUTE_PATH.jsException,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <JsException />
+          </Suspense>
+        ),
+      },
+
+      {
+        path: ROUTE_PATH.requestException,
+        element: (
+          <Suspense fallback={<div>加载中</div>}>
+            <RequestException />
           </Suspense>
         ),
       },

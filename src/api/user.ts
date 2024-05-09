@@ -20,12 +20,12 @@ export function getUser() {
 }
 
 export interface ApplicationInfo {
-  app_id: string;
+  appId: string;
   createdAt: string;
   id: number;
   type: number;
   name: string;
-  user_id: number;
+  userId: number;
 }
 
 export function getApplicationList() {

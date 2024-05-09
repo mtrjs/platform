@@ -1,6 +1,6 @@
 import * as request from '@utils/request';
 
-const apiPrefix = '/api/content/octopus';
+const apiPrefix = '';
 
 export interface GetExceptionListParams extends Pager, DateFilter {
   name?: string;

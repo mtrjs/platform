@@ -37,12 +37,6 @@ export default function CreateApp(props: Props) {
         <Form.Item label="项目名称" rules={[{ required: true, message: '请输入项目名称' }]} name="name">
           <Input placeholder="请输入项目名称" />
         </Form.Item>
-        <Form.Item label="项目类型" rules={[{ required: true, message: '请选择项目类型' }]} name="type">
-          <Radio.Group>
-            <Radio value={0}>web/H5 应用</Radio>
-            <Radio value={1}>小程序</Radio>
-          </Radio.Group>
-        </Form.Item>
       </Form>
     </Modal>
   );
