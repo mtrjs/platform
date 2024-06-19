@@ -16,7 +16,7 @@ const items: MenuProps['items'] = [
   {
     label: '性能分析',
     key: ROUTE_PATH.performance,
-    icon: <Icon name="zhibiaofenxi" />,
+    icon: <BoxPlotOutlined />,
     children: [
       {
         label: <Link to={ROUTE_PATH.performanceOverview}>首屏数据总览</Link>,
@@ -33,7 +33,7 @@ const items: MenuProps['items'] = [
   {
     label: '异常分析',
     key: ROUTE_PATH.exception,
-    icon: <BoxPlotOutlined />, 
+    icon: <BoxPlotOutlined />,
     children: [
       {
         label: <Link to={ROUTE_PATH.jsException}>JS 异常</Link>,
@@ -76,7 +76,8 @@ const App: React.FC = () => {
             className={S.customMenu}
             mode="inline"
             theme="light"
-            defaultSelectedKeys={['/']}
+            defaultSelectedKeys={[ROUTE_PATH.overview]}
+            defaultOpenKeys={[ROUTE_PATH.exception, ROUTE_PATH.performance]}
             items={items}
             selectedKeys={[selectKeys]}
             onClick={(e) => {
